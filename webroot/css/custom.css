@@ -1,0 +1,43 @@
+.general-header .header-top-inner .social-networks ul li a[href*="github.com"]::before,
+.sidebar .sidebar-inner .widget .widget-extra-info-holder .widget-author-social .social-links li a[href*="github.com"]::before,
+footer .footer-inner .footer-block .footer-widget-content .social-networks .social-links li a[href*="github.com"]::before {
+    content: "\f09b";
+}
+
+.general-header .header-top-inner .social-networks ul li a[href*="github.com"]:hover::before, footer .footer-inner .footer-block .footer-widget-content .social-networks .social-links li a[href*="github.com"]:hover::before {
+    color: white;
+}
+
+.social-links li a[href*="github.com"]:hover {
+    background-color: black;
+}
+
+.general-header .header-top-inner .social-networks ul li a[href*="linkedin.com"]:hover::before, footer .footer-inner .footer-block .footer-widget-content .social-networks .social-links li a[href*="linkedin.com"]:hover::before {
+    color: white;
+}
+
+.social-links li a[href*="linkedin.com"]:hover {
+    background-color: #0e76a8;
+}
+
+.general-header .header-top-inner .social-networks ul li a[href*="linkedin.com"]::before,
+.sidebar .sidebar-inner .widget .widget-extra-info-holder .widget-author-social .social-links li a[href*="linkedin.com"]::before,
+footer .footer-inner .footer-block .footer-widget-content .social-networks .social-links li a[href*="linkedin.com"]::before {
+    content: "\f08c";
+}
+
+footer .footer-inner .footer-block .footer-widget-content .social-networks .social-links li a[href*=".com"]::before {
+    color: black;
+}
+
+footer p {
+    color: black !important;
+}
+
+footer a {
+    color: black !important;
+}
+
+footer li {
+    color: black !important;
+}
