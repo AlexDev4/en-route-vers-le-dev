@@ -25,6 +25,7 @@ $( document ).ready(function() {
     // Init swiper for layout one banner
 
     var swiper = new Swiper('.swiper-container', {
+        initialSlide: 8,
         slidesPerView: 3,
         spaceBetween: 0,
         freeMode: false,
@@ -135,7 +136,7 @@ $( document ).ready(function() {
      // init social sharing network 
 
     $(".share").jsSocials({
-        shares: ["facebook", "twitter", "email", "pinterest", "pocket", "googleplus", "linkedin"],
+        shares: ["facebook", "twitter", "linkedin", "email"],
         showLabel: false,
         showCount: false,
         shareIn: "popup",

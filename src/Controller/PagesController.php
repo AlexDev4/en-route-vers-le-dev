@@ -16,6 +16,7 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use App\Model\Entity\Slider;
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
@@ -45,7 +46,8 @@ class PagesController extends AppController
      */
     public function home()
     {
-
+    $sliders = $this->fetchTable('Sliders')->find('all');
+    $this->set(compact('sliders'));
     }
 
     public function QuiSuisJe()

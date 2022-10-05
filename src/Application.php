@@ -27,6 +27,12 @@ use Cake\Http\MiddlewareQueue;
 use Cake\ORM\Locator\TableLocator;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use Authentication\AuthenticationService;
+use Authentication\AuthenticationServiceInterface;
+use Authentication\AuthenticationServiceProviderInterface;
+use Authentication\Middleware\AuthenticationMiddleware;
+use Cake\Routing\Router;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Application setup class.
@@ -34,7 +40,7 @@ use Cake\Routing\Middleware\RoutingMiddleware;
  * This defines the bootstrapping logic and middleware layers you
  * want to use in your application.
  */
-class Application extends BaseApplication
+class Application extends BaseApplication implements AuthenticationServiceProviderInterface
 {
     /**
      * Load all the application configuration and bootstrap logic.
@@ -62,6 +68,8 @@ class Application extends BaseApplication
         if (Configure::read('debug')) {
             $this->addPlugin('DebugKit');
         }
+
+        $this->addPlugin('Authentication');
 
         // Load more plugins here
     }
@@ -98,10 +106,12 @@ class Application extends BaseApplication
             ->add(new BodyParserMiddleware())
 
             // Cross Site Request Forgery (CSRF) Protection Middleware
-            // https://book.cakephp.org/4/en/security/csrf.html#cross-site-request-forgery-csrf-middleware
+            // https://book.cakephp.org/4/en/controllers/middleware.html#cross-site-request-forgery-csrf-middleware
             ->add(new CsrfProtectionMiddleware([
                 'httponly' => true,
-            ]));
+            ]))            
+
+            ->add(new AuthenticationMiddleware($this));
 
         return $middlewareQueue;
     }
@@ -113,17 +123,7 @@ class Application extends BaseApplication
      * @return void
      * @link https://book.cakephp.org/4/en/development/dependency-injection.html#dependency-injection
      */
-    public function services(ContainerInterface $container): void
-    {
-    }
-
-    /**
-     * Bootstrapping for CLI application.
-     *
-     * That is when running commands.
-     *
-     * @return void
-     */
+    
     protected function bootstrapCli(): void
     {
         $this->addOptionalPlugin('Cake/Repl');
@@ -133,4 +133,33 @@ class Application extends BaseApplication
 
         // Load more plugins here
     }
+
+   public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
+   {
+       $authenticationService = new AuthenticationService([
+           'unauthenticatedRedirect' => Router::url('/backoffice'),
+           'queryParam' => 'redirect',
+       ]);
+
+       // Charge les identifiants et s'assure que nous vérifions les champs e-mail et mot de passe
+       $authenticationService->loadIdentifier('Authentication.Password', [
+           'fields' => [
+               'username' => 'username',
+               'password' => 'password',
+           ]
+       ]);
+
+       // Charge les authenticators, nous voulons celui de session en premier
+       $authenticationService->loadAuthenticator('Authentication.Session');
+       // Configure la vérification des données du formulaire pour choisir l'email et le mot de passe
+       $authenticationService->loadAuthenticator('Authentication.Form', [
+           'fields' => [
+               'username' => 'username',
+               'password' => 'password',
+           ],
+           'loginUrl' => Router::url('/backoffice'),
+       ]);
+
+       return $authenticationService;
+   }
 }

@@ -114,7 +114,7 @@
                                     <span><img src="/img/logo.png" alt="Logo En route vers le dev"></span>
                                 </div>
                                 <div class="widget-content">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                    <p>Si vous voulez lire des articles sur l'informatique et son histoire, la programmation et les hauts et les bas d'un reconverti dans le développement, vous êtes au bon endroit !</p>
                                 </div>
                                 <!-- // widget-content -->
                                 <div class="social-networks">

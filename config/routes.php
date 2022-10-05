@@ -33,19 +33,14 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'home']);
         $builder->connect('/{action}', ['controller' => 'Pages', 'action' => '{action}']);
 
-        /*
-         * Connect catchall routes for all controllers.
-         *
-         * The `fallbacks` method is a shortcut for
-         *
-         * ```
-         * $builder->connect('/{controller}', ['action' => 'index']);
-         * $builder->connect('/{controller}/{action}/*', []);
-         * ```
-         *
-         * You can remove these routes once you've connected the
-         * routes you want in your application.
-         */
+        $builder->connect('/backoffice', ['controller' => 'Users', 'action' => 'login', 'prefix' => 'Backoffice']);
+        $builder->connect('/backoffice/deconnexion', ['controller' => 'Users', 'action' => 'logout', 'prefix' => 'Backoffice']);
+        $builder->prefix('Backoffice', ['param' => 'value'], function ($routes) {
+            $routes->connect('/{controller}');
+            $routes->connect('/{controller}/{action}');
+            $routes->connect('/{controller}/{action}/**');
+        });
+
         $builder->fallbacks();
     });
 

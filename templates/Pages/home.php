@@ -5,30 +5,32 @@
         <!-- Swiper -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide  banner-card">
-                    <div class="featured-post-image">
-                        <img src="/img/placeholder640x425.png" alt="....">
-                        <div class="mask"></div>
+                <?php foreach ($sliders as $slider) : ?>
+                    <div class="swiper-slide  banner-card">
+                        <div class="featured-post-image">
+                            <img src="<?= $slider->img ?>" alt="....">
+                            <div class="mask"></div>
+                        </div>
+                        <!-- // featured-post-image -->
+                        <div class="featured-content-holder">
+                            <div class="featured-content-meta">
+                                <a href="#"><span class="category"><?= $slider->category ?></span></a>
+                            </div>
+                            <div class="featured-content-title">
+                                <h2><a href="#"><?= $slider->title ?></a></h2>
+                            </div>
+                            <div class="featured-posted-date">
+                                <span class="posted-date"><?= $slider->created ?></span>
+                            </div>
+                        </div>
+                        <!-- // featured-content-holder -->
                     </div>
-                    <!-- // featured-post-image -->
-                    <div class="featured-content-holder">
-                        <div class="featured-content-meta">
-                            <a href="#"><span class="category">lifestyle</span></a>
-                        </div>
-                        <div class="featured-content-title">
-                            <h2><a href="#">Post image</a></h2>
-                        </div>
-                        <div class="featured-posted-date">
-                            <span class="posted-date">17 December, 2018</span>
-                        </div>
-                    </div>
-                    <!-- // featured-content-holder -->
-                </div>
+                <?php endforeach ?>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
-            <!-- <div class="swiper-button-next swiper-button-white"></div>
-            <div class="swiper-button-prev swiper-button-white"></div> -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
         </div>
     </div>
     <!-- // general banner inner -->
@@ -379,6 +381,7 @@
                                             <ul class="social-links">
                                                 <li><a href="https://www.facebook.com/profile.php?id=100078513240834"></a></li>
                                                 <li><a href="https://twitter.com/AlexDev83"></a></li>
+                                                <li><a href="https://www.linkedin.com/in/alexis-olive-576738201/"></a></li>
                                                 <li><a href="https://www.youtube.com/channel/UCXPJpOp5RzF-EKjVzkl7jEg"></a></li>
                                                 <li><a href="https://github.com/AlexDev4"></a></li>
                                             </ul>
@@ -412,7 +415,7 @@
                                                     <a href="http://twitter.com" class="clearfix" target="_blank">
                                                         Comet.co
                                                         <span class="social-icon">
-                                                        <img src="/img/freelance/comet.png"></img>
+                                                            <img src="/img/freelance/comet.png"></img>
                                                         </span>
                                                     </a>
                                                 </li>
@@ -459,7 +462,7 @@
                             <div class="widget widget-recent-posts">
                                 <div class="widget-content">
                                     <div class="widget-title">
-                                        <h2>Recent posts</h2>
+                                        <h2>Derniers posts</h2>
                                     </div>
                                     <div class="widget-extra-info-holder">
                                         <div class="widget-recent-posts">
@@ -525,7 +528,7 @@
                             <div class="widget widget-popular-post">
                                 <div class="widget-content">
                                     <div class="widget-title">
-                                        <h2>Popular Posts</h2>
+                                        <h2>Les + vus</h2>
                                     </div>
                                     <div class="widget-extra-info-holder">
                                         <div class="widget-posts">
@@ -585,121 +588,62 @@
                             <div class="widget widget-facebook-page-box">
                                 <div class="widget-content">
                                     <div class="widget-title">
-                                        <h2>Facebook page</h2>
+                                        <h2>Derniers Tweets</h2>
                                     </div>
                                     <div class="widget-extra-info-holder">
-                                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsparklewpthemes%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=298774560483441" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                                        <a class="twitter-timeline" data-height="500" href="https://twitter.com/AlexDev83?ref_src=twsrc%5Etfw">Tweets by AlexDev83</a>
+                                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <!-- // widget-extra-info-holder -->
                                     </div>
-                                    <!-- // widget-extra-info-holder -->
+                                    <!-- // widget-content -->
                                 </div>
-                                <!-- // widget-content -->
-                            </div>
-                            <!-- // widget widget-category -->
-                            <div class="widget widget-category">
-                                <div class="widget-content">
-                                    <div class="widget-title">
-                                        <h2>Category</h2>
+                                <!-- // widget widget-category -->
+                                <div class="widget widget-category">
+                                    <div class="widget-content">
+                                        <div class="widget-title">
+                                            <h2>Category</h2>
+                                        </div>
+                                        <div class="widget-extra-info-holder">
+                                            <ul class="widget-category-listings">
+                                                <li><a href="#">Lifestyle</a></li>
+                                                <li><a href="#">Health</a></li>
+                                                <li><a href="#">Article</a></li>
+                                                <li><a href="#">Travel</a></li>
+                                                <li><a href="#">Uncategorised</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- // widget-extra-info-holder -->
                                     </div>
-                                    <div class="widget-extra-info-holder">
-                                        <ul class="widget-category-listings">
-                                            <li><a href="#">Lifestyle</a></li>
-                                            <li><a href="#">Health</a></li>
-                                            <li><a href="#">Article</a></li>
-                                            <li><a href="#">Travel</a></li>
-                                            <li><a href="#">Uncategorised</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- // widget-extra-info-holder -->
+                                    <!-- // widget-content -->
                                 </div>
-                                <!-- // widget-content -->
-                            </div>
-                            <!-- // widget widget-category -->
-                            <div class="widget widget-popular-post">
-                                <div class="widget-content">
-                                    <div class="widget-title">
-                                        <h2>Trending Posts</h2>
+                                <!-- // widget widget-category -->
+                                
+                                <!-- // widget -->
+                                <div class="widget widget-newsletter">
+                                    <div class="widget-content">
+                                        <div class="widget-title">
+                                            <h2>Newsletter</h2>
+                                        </div>
+                                        <div class="widget-extra-info-holder">
+                                            <div class="widget-newsletter-content">
+                                                <p>Abonnez-vous à ma newsletter pour être toujours au courant des nouveaux articles !</p>
+                                                <form>
+                                                    <div class="form-group">
+                                                        <input type="email" name="newsletter-email" placeholder="Email Address ..." class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" name="submit" class="layout-one-btn">Subscribe</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!--// widget-newsletter-content -->
+                                        </div>
+                                        <!-- // widget-extra-info-holder -->
                                     </div>
-                                    <div class="widget-extra-info-holder">
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">That Evening At Bali Beach Was Wounderful Then Any Other Mornings</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>444 <span>comments</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">5 Reasons Why Ladies Prefer To Have Brown Hair And Black Dress</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>345 <span>comments</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">This post has just gone viral with many views</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>329 <span>comments</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>256 <span>comments</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                    </div>
-                                    <!-- // widget-extra-info-holder -->
+                                    <!-- // widget-content -->
                                 </div>
-                                <!-- // widget-content -->
+                                <!-- // widget widget-newsletter -->
                             </div>
-                            <!-- // widget -->
-                            <div class="widget widget-newsletter">
-                                <div class="widget-content">
-                                    <div class="widget-title">
-                                        <h2>Newsletter</h2>
-                                    </div>
-                                    <div class="widget-extra-info-holder">
-                                        <div class="widget-newsletter-content">
-                                            <p>Subscribe to newsletter to be updated with all the latest trends and products.</p>
-                                            <form>
-                                                <div class="form-group">
-                                                    <input type="email" name="newsletter-email" placeholder="Email Address ..." class="form-control">
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" name="submit" class="layout-one-btn">Subscribe</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <!--// widget-newsletter-content -->
-                                    </div>
-                                    <!-- // widget-extra-info-holder -->
-                                </div>
-                                <!-- // widget-content -->
-                            </div>
-                            <!-- // widget widget-newsletter -->
-                        </div>
-                        <!-- // sidebar-inner -->
+                            <!-- // sidebar-inner -->
                     </aside>
                     <!-- // sidebar -->
                 </div>
