@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,6 +15,7 @@ declare(strict_types=1);
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use App\Model\Entity\Slider;
@@ -46,17 +48,18 @@ class PagesController extends AppController
      */
     public function home()
     {
-    $sliders = $this->fetchTable('Sliders')->find('all');
-    $this->set(compact('sliders'));
+        $sliders = $this->fetchTable('Sliders')->find('all');
+        $this->set(compact('sliders'));
+
+        $articles = $this->fetchTable('Articles')->find('all');
+        $this->set(compact('articles'));
     }
 
     public function QuiSuisJe()
     {
-
     }
 
     public function meContacter()
     {
-        
     }
 }

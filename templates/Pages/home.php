@@ -42,6 +42,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="main-post-area-holder">
                         <article class="post-details-holder">
+                            <?php foreach($articles as $article): ?>
                             <div class="post-image">
                                 <img src="/img/placeholder1280x720.png" alt="....">
                             </div>
@@ -63,7 +64,7 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                         <div class="post-author">
-                                            <span class="post-author"><a href="#">Sparkle Themes</a></span>
+                                            <span class="post-author"><a href="#">Alexis OLIVE</a></span>
                                         </div>
                                     </div>
                                     <!-- // col 4 -->
@@ -82,6 +83,7 @@
                                 </div>
                                 <!-- // row -->
                             </div>
+                            <?php endforeach ?>
                         </article>
                         <!-- // post-details-holder -->
                         <article class="post-details-holder">
@@ -403,7 +405,7 @@
                                     <div class="widget-extra-info-holder">
                                         <div class="widget-social-links">
                                             <ul class="social-links-list">
-                                                <li class="facebook-link">
+                                                <li>
                                                     <a href="https://www.facebook.com/profile.php?id=100078513240834" class="clearfix" target="_blank">
                                                         Malt
                                                         <span class="social-icon">
@@ -411,43 +413,35 @@
                                                         </span>
                                                     </a>
                                                 </li>
-                                                <li class="twitter-link">
+                                                <li>
                                                     <a href="http://twitter.com" class="clearfix" target="_blank">
                                                         Comet.co
                                                         <span class="social-icon">
-                                                            <img src="/img/freelance/comet.png"></img>
+                                                            <img src="/img/freelance/comet.svg"></img>
                                                         </span>
                                                     </a>
                                                 </li>
-                                                <li class="googleplus-link">
+                                                <li>
                                                     <a href="http://plus.google.com" class="clearfix" target="_blank">
                                                         Codeur.com
                                                         <span class="social-icon">
-                                                            <i class="fa fa-google-plus"></i>
+                                                        <img src="/img/freelance/codeur.png"></img>
                                                         </span>
                                                     </a>
                                                 </li>
-                                                <li class="instagram-link">
+                                                <li>
                                                     <a href="http://instagram.com" class="clearfix" target="_blank">
                                                         Kamatz
                                                         <span class="social-icon">
-                                                            <i class="fa fa-instagram"></i>
+                                                        <img src="/img/freelance/kamatz.png"></img>
                                                         </span>
                                                     </a>
                                                 </li>
-                                                <li class="linkedin-link">
+                                                <li>
                                                     <a href="http://linkedin.com" class="clearfix" target="_blank">
                                                         Freelance-informatique
                                                         <span class="social-icon">
-                                                            <i class="fa fa-linkedin"></i>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="youtube-link">
-                                                    <a href="http://youtube.com" class="clearfix" target="_blank">
-                                                        Freelance.com
-                                                        <span class="social-icon">
-                                                            <i class="fa fa-youtube"></i>
+                                                        <img src="/img/freelance/freelance-informatique.png"></img>
                                                         </span>
                                                     </a>
                                                 </li>

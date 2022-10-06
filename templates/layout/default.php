@@ -113,7 +113,7 @@
                                 <div class="widget-about-site-logo">
                                     <span><img src="/img/logo.png" alt="Logo En route vers le dev"></span>
                                 </div>
-                                <div class="widget-content">
+                                <div class="widget-content" style="text-align:justify">
                                     <p>Si vous voulez lire des articles sur l'informatique et son histoire, la programmation et les hauts et les bas d'un reconverti dans le développement, vous êtes au bon endroit !</p>
                                 </div>
                                 <!-- // widget-content -->

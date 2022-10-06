@@ -7,25 +7,25 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Dashboard - Make it Créative</title>
+    <title>Dashboard</title>
     <link rel="apple-touch-icon" href="assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/vendors/css/vendors.min.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/vendors/css/charts/apexcharts.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/vendors/css/extensions/toastr.min.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/bootstrap.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/bootstrap-extended.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/colors.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/components.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/themes/dark-layout.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/themes/bordered-layout.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/themes/semi-dark-layout.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/core/menu/menu-types/vertical-menu.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/pages/dashboard-ecommerce.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/plugins/charts/chart-apex.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/assets/css/plugins/extensions/ext-component-toastr.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('bo/vendors/css/vendors.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/vendors/css/charts/apexcharts.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/vendors/css/extensions/toastr.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/bootstrap.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/bootstrap-extended.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/colors.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/components.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/themes/dark-layout.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/themes/bordered-layout.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/themes/semi-dark-layout.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/core/menu/menu-types/vertical-menu.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/pages/dashboard-ecommerce.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/plugins/charts/chart-apex.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= $this->Url->build('/bo/css/plugins/extensions/ext-component-toastr.css'); ?>">
 
 </head>
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
