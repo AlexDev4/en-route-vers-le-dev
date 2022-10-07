@@ -74,19 +74,19 @@
             <nav class="main-nav layout-one">
                 <div id="main-nav" class="stellarnav">
                     <ul>
-                        <li><a href="<?= $this->Url->build('/')?>">Accueil</a>
+                        <li><a href="<?= $this->Url->build('/') ?>">Accueil</a>
                         </li>
-                        <li><a href="#">Catégories</a>
+                        <li><a href="<?= $this->Url->build('/blog') ?>">Catégories</a>
                             <ul>
-                                <li><a href="single-page-layout-one.html">Reconversion</a></li>
-                                <li><a href="single-page-layout-two.html">Langage de programmation</a></li>
-                                <li><a href="single-page-layout-two-video.html">Cybersécurité et réseaux</a></li>
-                                <li><a href="single-page-layout-three.html">Histoire de l'informatique</a></li>
+                                <li><a href="<?= $this->Url->build('/blog/reconversion') ?>">Reconversion</a></li>
+                                <li><a href="<?= $this->Url->build('/blog/programmation') ?>">Langage de programmation</a></li>
+                                <li><a href="<?= $this->Url->build('/blog/cybersecurite-reseau') ?>">Cybersécurité et réseaux</a></li>
+                                <li><a href="<?= $this->Url->build('/blog/histoire-informatique') ?>">Histoire de l'informatique</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Qui suis je ?</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Me contacter</a></li>
+                        <li><a href="<?= $this->Url->build('/qui-suis-je') ?>">Qui suis je ?</a></li>
+                        <li><a href="https://www.alexis-olive-developpeur.fr/">Portfolio</a></li>
+                        <li><a href="<?= $this->Url->build('/contact') ?>">Me contacter</a></li>
                     </ul>
                 </div>
                 <!-- .stellar-nav -->
@@ -140,11 +140,17 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="widget-category-listings">
-                                        <li><a href="#">Lifestyle</a></li>
-                                        <li><a href="#">Health</a></li>
-                                        <li><a href="#">Article</a></li>
-                                        <li><a href="#">Travel</a></li>
-                                        <li><a href="#">Uncategorised</a></li>
+                                        <li><a href="#">Accueil</a></li>
+                                        <li><a href="<?= $this->Url->build('/blog') ?>">Blog</a></li>
+                                            <ul>
+                                                <li><a href="<?= $this->Url->build('/blog/reconversion') ?>">Reconversion</a></li>
+                                                <li><a href="<?= $this->Url->build('/blog/programmation') ?>">Langage de programmation</a></li>
+                                                <li><a href="<?= $this->Url->build('/blog/cybersecurite-reseau') ?>">Cybersécurité et réseaux</a></li>
+                                                <li><a href="<?= $this->Url->build('/blog/histoire-informatique') ?>">Histoire de l'informatique</a></li>
+                                            </ul>
+                                        <li><a href="#">Qui suis-je ?</a></li>
+                                        <li><a href="#">Mon portfolio</a></li>
+                                        <li><a href="#">Me contacter</a></li>
                                     </ul>
                                 </div>
                                 <!-- // widget-content -->

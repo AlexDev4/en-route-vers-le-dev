@@ -44,16 +44,15 @@
                         <article class="post-details-holder">
                             <?php foreach($articles as $article): ?>
                             <div class="post-image">
-                                <img src="/img/placeholder1280x720.png" alt="....">
+                                <img src="<?= $article->img ?>" alt="....">
                             </div>
                             <!-- // post image -->
                             <div class="post-title">
-                                <h2>That evening at bali beach was wounderful then any other evening</h2>
+                                <h2><?= $article->title ?></h2>
                             </div>
                             <!-- // post-title -->
                             <div class="post-the-content clearfix layout-one-first-letter">
-                                <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                                </p>
+                                <p><?= $article->body ?></p>
                             </div>
                             <!-- // post-the-content -->
                             <div class="post-permalink">
