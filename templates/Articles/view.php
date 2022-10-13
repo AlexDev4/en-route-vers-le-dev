@@ -30,6 +30,10 @@
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($article->id) ?></td>
                 </tr>
+                <tr>
+                    <th><?= __('View') ?></th>
+                    <td><?= $article->view === null ? '' : $this->Number->format($article->view) ?></td>
+                </tr>
             </table>
             <div class="text">
                 <strong><?= __('Body') ?></strong>

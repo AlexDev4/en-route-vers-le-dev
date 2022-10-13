@@ -14,6 +14,7 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('img') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
+                    <th><?= $this->Paginator->sort('view') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -23,6 +24,7 @@
                     <td><?= $this->Number->format($article->id) ?></td>
                     <td><?= h($article->img) ?></td>
                     <td><?= h($article->title) ?></td>
+                    <td><?= $article->view === null ? '' : $this->Number->format($article->view) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $article->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $article->id]) ?>

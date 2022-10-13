@@ -36,7 +36,7 @@
             <div class="content-body">
                 <div class="auth-wrapper auth-cover">
                     <div class="auth-inner row m-0">
-                        <a class="brand-logo" href="index.html">
+                        <a class="brand-logo" href="<?= $this->Url->build('/') ?>">
                             <img class="logo-bo" src="<?= $this->Url->build('/img/logo.png') ?>"></img>
                         </a>
                         <?= $this->Flash->render() ?>

@@ -14,7 +14,7 @@
                 <label class="form-label" for="login-password">Password</label><a href="<?= $this->Url->build('/backoffice/mot-de-passe-oublie'); ?>"><small>Mot de passe oublié?</small></a>
             </div>
             <div class="input-group input-group-merge form-password-toggle">
-                <?= $this->Form->control('password', ['templates' => 'app_form', 'label' => false, 'class' => 'form-control form-control-merge', 'placeholder' => '....................', 'required' => true]) ?>
+                <?= $this->Form->control('password', ['templates' => 'app_form', 'label' => false, 'class' => 'form-control form-control-merge', 'placeholder' => '*************', 'required' => true]) ?>
 
                 <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
 
@@ -27,6 +27,7 @@
             </div>
         </div>
         <button class="btn btn-primary w-100" tabindex="4">Connexion</button>
+    
         <?= $this->Form->end() ?>
         </form>
         <p class="text-center mt-2"><span>Un problème pour se connecter ?</span><a href="<?= $this->Url->build('/backoffice/report'); ?>"><span>&nbsp;Contactez moi.</span></a></p>

@@ -25,6 +25,7 @@
                     echo $this->Form->control('img');
                     echo $this->Form->control('title');
                     echo $this->Form->control('body');
+                    echo $this->Form->control('view');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

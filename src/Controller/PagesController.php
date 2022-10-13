@@ -53,13 +53,33 @@ class PagesController extends AppController
 
         $articles = $this->fetchTable('Articles')->find('all');
         $this->set(compact('articles'));
+
+        $categories = $this->fetchTable('Categories')->find('all');
+        $this->set(compact('categories'));
     }
 
-    public function QuiSuisJe()
+    public function article($id=null)
     {
+        $articles = $this->fetchTable('Articles')->get($id);
+        $this->set(compact('articles'));
+
+        $categories = $this->fetchTable('categories')->find('all');
+        $this->set(compact('categories'));
+
+        $comments = $this->fetchTable('Comments')->find('all')
+            ->where(['Comments.id_articles' => $id]);
+        $this->set(compact('comments'));
+    }
+
+    public function quiSuisJe()
+    {
+        $categories = $this->fetchTable('categories')->find('all');
+        $this->set(compact('categories'));
     }
 
     public function meContacter()
     {
+        $categories = $this->fetchTable('categories')->find('all');
+        $this->set(compact('categories'));
     }
 }
