@@ -48,6 +48,7 @@ class PagesController extends AppController
      */
     public function home()
     {
+
         $sliders = $this->fetchTable('Sliders')->find('all');
         $this->set(compact('sliders'));
 
@@ -56,19 +57,30 @@ class PagesController extends AppController
 
         $categories = $this->fetchTable('Categories')->find('all');
         $this->set(compact('categories'));
+
+        $comments = $this->fetchTable('Comments')->find('list', [
+            'valueField' => 'id_articles',
+            'groupField' => 'id_articles'
+        ]);
+        $commentsTest = $comments->toArray();
+        $totalComments = sizeof($commentsTest);
+        $nbComments = array();        
+        for($i = 1; $i <= $totalComments; $i++){
+            $countComments = count($commentsTest[$i]);
+            $nbComments[] = $countComments;
+        }
+         $this->set(compact('nbComments'));
     }
 
-    public function article($id=null)
+
+
+    public function article($id = null)
     {
-        $articles = $this->fetchTable('Articles')->get($id);
-        $this->set(compact('articles'));
 
-        $categories = $this->fetchTable('categories')->find('all');
-        $this->set(compact('categories'));
 
-        $comments = $this->fetchTable('Comments')->find('all')
-            ->where(['Comments.id_articles' => $id]);
-        $this->set(compact('comments'));
+
+        /*         dd($comments);
+ */
     }
 
     public function quiSuisJe()

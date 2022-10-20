@@ -251,49 +251,6 @@ $( document ).ready(function() {
         }
     });
 
-
-
-
-    // instagram js init
-
-    var feed = new Instafeed({
-        get: 'user',
-        userId: '6961967152',
-        accessToken: '6961967152.1677ed0.68b0b2fb78184886b70a012b4372800e',
-        resolution: 'standard_resolution',
-
-        template: '<div class="item"><a href="{{link}}"><img src="{{image}}"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a></div>',
-        target: 'instafeed',
-        after: function() {
-            $('.feed-carousel').owlCarousel({
-                items: 6,
-                loop: true,
-                margin: 0,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                nav: false,
-
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 3
-                    },
-                    992: {
-                        items: 6
-                    },
-                    1200: {
-                        items: 6
-                    }
-                }
-            });
-
-        }
-    });
-    feed.run();
-
-
     // video background in single blog post page 
 
     $('.covervid-video').coverVid(1920, 1080);

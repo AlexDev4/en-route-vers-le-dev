@@ -39,9 +39,22 @@ class AppController extends Controller
             $this->loadComponent('Authentication.Authentication');
             //$this->viewBuilder()->setLayout('backoffice');
         }
+
+        $categories = $this->fetchTable('Categories')->find('all');
+        $this->set(compact('categories'));
+
+        $articlesFooter = $this->fetchTable('Articles')->find()
+            ->order(['created' => 'DESC'])
+            ->limit(5);
+        $this->set(compact('articlesFooter'));
     }
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
+    }
+   
+    protected function onSubmitNewsletter()
+    {
+
     }
 }
