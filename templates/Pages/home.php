@@ -80,7 +80,7 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
                                             <!-- // col 4 -->
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                 <div class="post-comment-count">
-                                                    <span class="post-comment-count"><a href="#"><?= isset($nbComments[$i]) ? $nbComments[$i] : 0 ?> commentaire</a></span>
+                                                    <span class="post-comment-count"><a href="#"><?= isset($nbComments[$i]) ? $nbComments[$i] . ' commentaires' : "0 commentaire" ?></a></span>
                                                 </div>
                                             </div>
                                             <!-- // col 4 -->
