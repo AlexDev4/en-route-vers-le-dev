@@ -203,14 +203,14 @@ use App\Model\Entity\Category;
                                         <div class="widget-extra-info-holder">
                                             <div class="widget-newsletter-content">
                                                 <p>Abonnez-vous à ma newsletter pour être toujours au courant des nouveaux articles !</p>
-                                                <form>
-                                                    <div class="form-group">
-                                                        <input type="email" name="newsletter-email" placeholder="Email Address ..." class="form-control">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <button type="submit" name="submit" class="layout-one-btn">Subscribe</button>
-                                                    </div>
-                                                </form>
+                                                <?= $this->Form->create(null, ["url" => "/pages/newsletters"]) ?>
+                                                <div class="form-group">
+                                                    <input type="email" name="mailNew" placeholder="paul.otlet@mondaneum.be" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" name="submit" class="layout-one-btn">S'inscrire</button>
+                                                </div>
+                                                <?= $this->Form->end() ?>
                                             </div>
                                             <!--// widget-newsletter-content -->
                                         </div>

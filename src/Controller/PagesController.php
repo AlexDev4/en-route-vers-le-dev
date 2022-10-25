@@ -48,7 +48,6 @@ class PagesController extends AppController
      */
     public function home()
     {
-
         $sliders = $this->fetchTable('Sliders')->find('all');
         $this->set(compact('sliders'));
 
@@ -58,29 +57,25 @@ class PagesController extends AppController
         $categories = $this->fetchTable('Categories')->find('all');
         $this->set(compact('categories'));
 
+        //renvoi un tableau avec le nombre de commentaire par article
         $comments = $this->fetchTable('Comments')->find('list', [
             'valueField' => 'id_articles',
             'groupField' => 'id_articles'
         ]);
         $commentsTest = $comments->toArray();
         $totalComments = sizeof($commentsTest);
-        $nbComments = array();        
-        for($i = 1; $i <= $totalComments; $i++){
+        $nbComments = array();
+        for ($i = 1; $i <= $totalComments; $i++) {
             $countComments = count($commentsTest[$i]);
             $nbComments[] = $countComments;
         }
-         $this->set(compact('nbComments'));
+        $this->set(compact('nbComments'));
     }
 
 
 
     public function article($id = null)
     {
-
-
-
-        /*         dd($comments);
- */
     }
 
     public function quiSuisJe()
@@ -93,5 +88,23 @@ class PagesController extends AppController
     {
         $categories = $this->fetchTable('categories')->find('all');
         $this->set(compact('categories'));
+    }
+
+    public function newsletters()
+    {
+        if ($this->getRequest()->is(['patch', 'post', 'put'])) { {
+                if (!empty($this->getRequest()->getData('mailNew'))) {
+                    $requestNews = $this->fetchTable('newsletters')->NewEntity($this->getRequest()->getData());
+                    if ($this->fetchTable('newsletters')->save($requestNews)) {
+                        $this->Flash->success(__('Votre inscription à bien été prise en compte. Merci !'));
+                        return $this->redirect('/');
+                    }
+                    return $this->redirect('/');
+                    $this->Flash->error(__('Veuillez entrer une adresse e-mail valide'));
+                }
+                return $this->redirect('/');
+                $this->Flash->error(__('Il semble que le site rencontre un problème. Contactez-moi : alexisolive.informatique@gmail.com'));
+            }
+        }
     }
 }

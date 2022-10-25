@@ -8,7 +8,7 @@ use App\Controller\AppController;
 
 class BlogController extends AppController
 {
-    public function article($id = null)
+    public function article($id = null, $slug=null)
     {
 
         $articles = $this->fetchTable('Articles')->get($id);
@@ -19,7 +19,6 @@ class BlogController extends AppController
         $categorie = $categories->first();
         $this->set(compact('categorie'));
 
-
         $comments = $this->fetchTable('Comments')->find()
             ->where(['Comments.id_articles' => $id]);
         $this->set(compact('comments'));
@@ -27,17 +26,30 @@ class BlogController extends AppController
 
     public function reconversion()
     {
+        $articlesReco = $this->fetchTable('Articles')->find()
+            ->where(['id_categories' => 1]);
+        $this->set(compact('articlesReco'));
+       
     }
 
     public function histoireInformatique()
     {
+        $articlesHist = $this->fetchTable('Articles')->find()
+            ->where(['id_categories' => 4]);
+        $this->set(compact('articlesHist'));
     }
 
     public function cybersecuriteReseaux()
     {
+        $articlesCyber = $this->fetchTable('Articles')->find()
+            ->where(['id_categories' => 3]);
+        $this->set(compact('articlesCyber'));
     }
 
     public function langagesProgrammation()
     {
+        $articlesProg = $this->fetchTable('Articles')->find()
+            ->where(['id_categories' => 2]);
+        $this->set(compact('articlesProg'));
     }
 }

@@ -29,7 +29,8 @@ return static function (RouteBuilder $routes) {
     $routes->setRouteClass(DashedRoute::class);
 
     $routes->scope('/', function (RouteBuilder $builder) {
-
+/*         $routes->get('/blog/{slug}', ['controller' => 'blog', 'action' => 'article'],);
+ */
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'home']);
         $builder->connect('/{action}', ['controller' => 'Pages', 'action' => '{action}']);
         $builder->connect('/blog/{action}', ['controller' => 'Blog', 'action' => '{action}']);
@@ -42,7 +43,7 @@ return static function (RouteBuilder $routes) {
             $routes->connect('/{controller}/{action}/**');
         });
 
-        $builder->fallbacks();
+        $builder->fallbacks(DashedRoute::class);
     });
 
     /*

@@ -123,65 +123,7 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
                             <!-- // widget -->
 
                             <!-- // widget widget-newsletter -->
-                            <div class="widget widget-popular-post">
-                                <div class="widget-content">
-                                    <div class="widget-title">
-                                        <h2>Les + vus</h2>
-                                    </div>
-                                    <div class="widget-extra-info-holder">
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">That Evening At Bali Beach Was Wounderful Then Any Other Mornings</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>1277 <span>Views</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">5 Reasons Why Ladies Prefer To Have Brown Hair And Black Dress</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>865 <span>Views</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">This post has just gone viral with many views</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>721 <span>Views</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                        <div class="widget-posts">
-                                            <div class="post-thumb">
-                                                <img src="./assets/dist/img/thumb/placeholder200x120.png" alt=".....">
-                                            </div>
-                                            <div class="post-title">
-                                                <h5><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></h5>
-                                            </div>
-                                            <div class="post-view-count post-meta">
-                                                <p>234 <span>Views</span></p>
-                                            </div>
-                                        </div>
-                                        <!-- // widget-post -->
-                                    </div>
-                                    <!-- // widget-extra-info-holder -->
-                                </div>
-                                <!-- // widget-content -->
-                            </div>
+                            
                             <!-- // widget -->
                             <div class="widget widget-facebook-page-box">
                                 <div class="widget-content">
@@ -222,14 +164,14 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
                                         <div class="widget-extra-info-holder">
                                             <div class="widget-newsletter-content">
                                                 <p>Abonnez-vous à ma newsletter pour être toujours au courant des nouveaux articles !</p>
-                                                <form>
-                                                    <div class="form-group">
-                                                        <input type="email" name="newsletter-email" placeholder="Email Address ..." class="form-control">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <button type="submit" name="submit" class="layout-one-btn">Subscribe</button>
-                                                    </div>
-                                                </form>
+                                                <?= $this->Form->create(null, ["url" => "/pages/newsletters"]) ?>
+                                                <div class="form-group">
+                                                    <input type="email" name="mailNew" placeholder="paul.otlet@mondaneum.be" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" name="submit" class="layout-one-btn">S'inscrire</button>
+                                                </div>
+                                                <?= $this->Form->end() ?>
                                             </div>
                                             <!--// widget-newsletter-content -->
                                         </div>
