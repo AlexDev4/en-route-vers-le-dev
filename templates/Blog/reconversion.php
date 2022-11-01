@@ -1,3 +1,5 @@
+<?php $this->assign('title', "Reconversion"); ?>
+
 <div class="container">
     <div class="main-post-area-wrapper main-post-area-layout-one">
         <div class="main-post-area-inner">

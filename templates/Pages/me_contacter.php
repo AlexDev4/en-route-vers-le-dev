@@ -9,26 +9,55 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
         <div class="main-post-area-inner">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-
-                    <form class="comments__form">
+                    <div class='title-contact'>
+                        <span style="--i:1">C</span>
+                        <span style="--i:2">O</span>
+                        <span style="--i:3">N</span>
+                        <span style="--i:4">T</span>
+                        <span style="--i:5">A</span>
+                        <span style="--i:6">C</span>
+                        <span style="--i:7">T</span>
+                        <span style="--i:8">E</span>
+                        <span style="--i:9">Z</span>
+                        <span style="--i:10">-</span>
+                        <span style="--i:11">M</span>
+                        <span style="--i:12">O</span>
+                        <span style="--i:13">I</span>
+                    </div>
+                    <div class="body-contact">
+                        N'hésitez surtout pas à me contacter en cas de besoin, je réponds à tous les messages ! Suggestions, bug, proposition, idée d'article, etc, je suis ouvert à toutes les idées et les critiques ! En cas d'urgence, <a href="https://twitter.com/AlexDev83">je suis dispo sur Twitter</a>
+                    </div>
+                    <?= $this->Form->create(null, ["url" => "/pages/messageContact"]) ?>
                         <div class="comments__form-info">
                             <div class="comments__form-field">
-                                <input id="comments__form-label-name" name="author" placeholder="Nom" type="text" class="comments__form-input">
+                                <input id="comments__form-label-name" name="name" placeholder="Nom" type="text" class="comments__form-input">
                                 <label class="comments__form-label" for="comments__form-label-name">
-                                    <span class="comments__form-label-text">Nom</span>
+                                    <span class="comments__form-label-text">Votre nom (ou pseudo)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="comments__form-info">
+                            <div class="comments__form-field">
+                                <input id="comments__form-label-name" name="mailContact" placeholder="Mail" type="email" class="comments__form-input">
+                                <label class="comments__form-label" for="comments__form-label-name">
+                                    <span class="comments__form-label-text">Laissez moi un moyen de vous recontacter !</span>
                                 </label>
                             </div>
                         </div>
                         <div class="comments__form-text">
                             <div class="comments__form-field">
-                                <textarea id="comments__form-label-text" name="comment" placeholder="Mon commentaire..." type="text" class="comments__form-input comments__form-textarea"></textarea>
+                                <textarea id="comments__form-label-text" name="bodyMessage" placeholder="Vous avez trouvé un bug ? Vous avez une suggestion d'amélioration ? Une question ?" type="text" class="comments__form-input comments__form-textarea"></textarea>
                                 <label class="comments__form-label" for="comments__form-label-text">
-                                    <span class="comments__form-label-text">Exprimez votre avis, vos suggestions, ...</span>
+                                    <span class="comments__form-label-text">Cake is a lie...</span>
                                 </label>
                             </div>
                         </div>
-                        <input name="submit" type="submit" id="submit" class="comments__form-submit" value="Poster mon commentaire">
-                    </form>
+                        <div class="comments__form-text">
+                            <input type="checkbox" id="consent" name="consent">
+                            <label for="consent" style="font-weight: 100;">Je consens à ce que mes coordonnées soient réutilisés afin de répondre à mon message.</label>
+                        </div>
+                        <input name="submit" type="submit" id="submit" class="btn-envoi-msg" value="Envoyer mon message">
+                    <?= $this->form->end() ?>
                 </div>
                 <!-- // col -->
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -123,7 +152,7 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
                             <!-- // widget -->
 
                             <!-- // widget widget-newsletter -->
-                            
+
                             <!-- // widget -->
                             <div class="widget widget-facebook-page-box">
                                 <div class="widget-content">

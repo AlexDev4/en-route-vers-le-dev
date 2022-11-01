@@ -25,10 +25,10 @@ $( document ).ready(function() {
     // Init swiper for layout one banner
 
     var swiper = new Swiper('.swiper-container', {
-        initialSlide: 8,
+        initialSlide: 3,
         slidesPerView: 3,
         spaceBetween: 0,
-        freeMode: false,
+        freeMode: true,
         nav: true,
         loop: true,
 

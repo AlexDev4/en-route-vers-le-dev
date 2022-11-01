@@ -57,6 +57,7 @@ class PagesController extends AppController
         $categories = $this->fetchTable('Categories')->find('all');
         $this->set(compact('categories'));
 
+        //TODO : à optimiser | voir CounterCache 
         //renvoi un tableau avec le nombre de commentaire par article
         $comments = $this->fetchTable('Comments')->find('list', [
             'valueField' => 'id_articles',
@@ -78,16 +79,21 @@ class PagesController extends AppController
     {
     }
 
-    public function quiSuisJe()
+    public function meContacter()
     {
         $categories = $this->fetchTable('categories')->find('all');
         $this->set(compact('categories'));
     }
 
-    public function meContacter()
+    public function comingSoon()
     {
-        $categories = $this->fetchTable('categories')->find('all');
-        $this->set(compact('categories'));
+        //générateur de citations aléatoires
+        $this->viewBuilder()->disableAutoLayout();
+        $random = rand(1, 12);
+        $citations = $this->fetchTable('citations')->find()
+            ->where(['id' => $random])
+            ->first();
+        $this->set(compact('citations'));
     }
 
     public function newsletters()
@@ -104,6 +110,28 @@ class PagesController extends AppController
                 }
                 return $this->redirect('/');
                 $this->Flash->error(__('Il semble que le site rencontre un problème. Contactez-moi : alexisolive.informatique@gmail.com'));
+            }
+        }
+    }
+
+    public function messageContact()
+    {
+        if ($this->getRequest()->is(['patch', 'post', 'put'])) { {
+                if (!empty($this->getRequest()->getData())) {
+                    $messageNew = $this->fetchTable('contacts')->NewEntity($this->getRequest()->getData());
+                    if (isset($_POST['consent'])) {
+                        if ($this->fetchTable('contacts')->save($messageNew)) {
+                            $this->Flash->success(__('Votre message à bien été envoyé. J\'y réponds au plus vite !'));
+                            return $this->redirect('/me-contacter');
+                        }
+                        $this->Flash->error(__('Veuillez saisir une adresse mail valide s\'il vous plaît'));
+                        return $this->redirect('/me-contacter');
+                    }
+                    $this->Flash->error(__('Si vous ne m\'autorisez pas à réutiliser votre mail, je ne pourrais pas vous répondre !'));
+                    return $this->redirect('/me-contacter');
+                }
+                $this->Flash->error(__('Il semble que le site rencontre un problème. Contactez-moi : alexisolive.informatique@gmail.com'));
+                return $this->redirect('/me-contacter');
             }
         }
     }

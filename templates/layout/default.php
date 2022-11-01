@@ -37,10 +37,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="search">
+                                <!-- <div class="search">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                     <input type="search" placeholder="Recherche.......">
-                                </div>
+                                </div> -->
                             </div>
                             <!-- // col -->
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -83,8 +83,7 @@
                                 <?php endforeach; ?>
                             </ul>
                         </li>
-                        <li><a href="<?= $this->Url->build('/qui-suis-je') ?>">Qui suis je ?</a></li>
-                        <li><a href="https://www.alexis-olive-developpeur.fr/">Portfolio</a></li>
+                        <li><a href="<?= $this->Url->build('/coming-soon') ?>">Portfolio</a></li>
                         <li><a href="<?= $this->Url->build('/me-contacter') ?>">Me contacter</a></li>
                     </ul>
                 </div>
@@ -142,7 +141,7 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="widget-category-listings">
-                                        <li><a href="#">Accueil</a></li>
+                                        <li><a href="<?= $this->Url->build('/') ?>">Accueil</a></li>
                                         <li><a href="<?= $this->Url->build('/blog') ?>">Blog</a></li>
                                         <ul>
                                             <li><a href="<?= $this->Url->build('/blog/reconversion') ?>">Reconversion</a></li>
@@ -150,9 +149,8 @@
                                             <li><a href="<?= $this->Url->build('/blog/cybersecurite-reseaux') ?>">Cybersécurité et réseaux</a></li>
                                             <li><a href="<?= $this->Url->build('/blog/histoire-informatique') ?>">Histoire de l'informatique</a></li>
                                         </ul>
-                                        <li><a href="">Qui suis-je ?</a></li>
-                                        <li><a href="">Mon portfolio</a></li>
-                                        <li><a href="#">Me contacter</a></li>
+                                        <li><a href="<?= $this->Url->build('/coming-soon') ?>">Mon portfolio</a></li>
+                                        <li><a href="<?= $this->Url->build('/me-contacter') ?>">Me contacter</a></li>
                                     </ul>
                                 </div>
                                 <!-- // widget-content -->
