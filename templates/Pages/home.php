@@ -18,7 +18,7 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
                         <!-- // featured-post-image -->
                         <div class="featured-content-holder">
                             <div class="featured-content-meta">
-                                <a href="#"><span class="category"><?= $slider->category ?></span></a>
+                                <a href="<?= $slider->link_cat ?>"><span class="category"><?= $slider->category ?></span></a>
                             </div>
                             <div class="featured-content-title">
                                 <h2><a href="#"><?= $slider->title ?></a></h2>
@@ -45,9 +45,10 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="main-post-area-holder">
-                        <article class="post-details-holder">
-                            <?php $i = 0 ?>
-                            <?php foreach ($articles as $article) : ?>
+                        <?php $i = 0 ?>
+                        <?php foreach ($articles as $article) : ?>
+                            <article class="post-details-holder">
+
                                 <div class="post-image">
                                     <img src="<?= $article->img ?>" alt="....">
                                 </div>
@@ -87,9 +88,10 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
                                     </div>
                                     <!-- // row -->
                                 </div>
-                                <?php $i = $i + 1; ?>
-                            <?php endforeach ?>
-                        </article>
+
+                            </article>
+                            <?php $i = $i + 1; ?>
+                        <?php endforeach ?>
                         <!-- // post-details-holder -->
                     </div>
                     <!-- // main-post-area-holder -->
@@ -187,7 +189,7 @@ $this->assign('title', 'En route vers le dev | Le Blog d\'un jeune développeur'
                             <!-- // widget -->
 
                             <!-- // widget widget-newsletter -->
-                            
+
                             <!-- // widget -->
                             <div class="widget widget-facebook-page-box">
                                 <div class="widget-content">

@@ -239,3 +239,18 @@ msg-coming {
       filter: blur(0);
     }
   }
+  .connexion
+  {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    padding-top: 7px;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #fff;
+  }
+  .connexion:hover
+  {
+    background: #c9dfc9;
+    color: #000000;
+  }

@@ -846,7 +846,7 @@ select:-webkit-autofill {
   margin-left: 0.2rem; }
 
 .header-navbar .navbar-container ul.navbar-nav li a.dropdown-user-link .user-status {
-  font-size: smaller; }
+  font-size: medium; }
 
 .header-navbar .navbar-container ul.navbar-nav li a.dropdown-user-link img {
   box-shadow: 0 4px 8px 0 rgba(34, 41, 47, 0.12), 0 2px 4px 0 rgba(34, 41, 47, 0.08); }
@@ -1020,7 +1020,8 @@ select:-webkit-autofill {
 
 @media (max-width: 767.98px) {
   .header-navbar.floating-nav {
-    width: calc( 100vw - (100vw - 100%) - calc(2rem + 0.4rem)) !important;
+    width: calc(
+ 100vw - (100vw - 100%) - calc(2rem + 0.4rem)) !important;
     margin-left: calc(2rem - 0.8rem);
     margin-right: calc(2rem - 0.8rem); }
   .header-navbar .navbar-container ul.navbar-nav li .selected-language {

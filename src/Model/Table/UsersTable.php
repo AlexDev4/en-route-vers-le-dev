@@ -49,7 +49,6 @@ class UsersTable extends Table
 
         $this->belongsTo('Roles', [
             'foreignKey' => 'role_id',
-            'joinType' => 'INNER',
         ]);
     }
 
@@ -63,7 +62,7 @@ class UsersTable extends Table
     {
         $validator
             ->integer('role_id')
-            ->notEmptyString('role_id');
+            ->allowEmptyString('role_id');
 
         $validator
             ->scalar('username')
@@ -76,6 +75,18 @@ class UsersTable extends Table
             ->maxLength('password', 255)
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
+
+        $validator
+            ->scalar('pseudo')
+            ->maxLength('pseudo', 255)
+            ->requirePresence('pseudo', 'create')
+            ->notEmptyString('pseudo');
+
+        $validator
+            ->scalar('avatar')
+            ->maxLength('avatar', 255)
+            ->requirePresence('avatar', 'create')
+            ->notEmptyString('avatar');
 
         $validator
             ->boolean('is_ban')

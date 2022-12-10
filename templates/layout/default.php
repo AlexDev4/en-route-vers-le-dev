@@ -37,10 +37,12 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <!-- <div class="search">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                    <input type="search" placeholder="Recherche.......">
-                                </div> -->
+                                <div class="col-md-5">
+                                    <a class="connexion" href="<?= $this->Url->build('/backoffice') ?>"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>Espace membre</a>
+                                </div>
                             </div>
                             <!-- // col -->
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -52,6 +54,7 @@
                                         <li><a href="https://www.youtube.com/channel/UCXPJpOp5RzF-EKjVzkl7jEg"></a></li>
                                         <li><a href="https://github.com/AlexDev4"></a></li>
                                     </ul>
+
                                 </div>
                                 <!-- // social-networks -->
                             </div>
@@ -97,7 +100,7 @@
 
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
-        
+
     </main>
 
     <footer class="general-footer" style="background-image:url(./assets/dist/img/placeholder1900x800.png)">

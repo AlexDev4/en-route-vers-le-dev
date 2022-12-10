@@ -8,5 +8,7 @@
         public function index()
         {
             $this->viewBuilder()->setLayout('backoffice');
+            $users = $this->fetchTable('users')->find()->first();
+            $this->set(compact('users'));
         }
     }

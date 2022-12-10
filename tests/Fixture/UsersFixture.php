@@ -23,8 +23,10 @@ class UsersFixture extends TestFixture
                 'role_id' => 1,
                 'username' => 'Lorem ipsum dolor sit amet',
                 'password' => 'Lorem ipsum dolor sit amet',
-                'created' => '2022-10-05 09:28:37',
-                'modified' => '2022-10-05 09:28:37',
+                'pseudo' => 'Lorem ipsum dolor sit amet',
+                'avatar' => 'Lorem ipsum dolor sit amet',
+                'created' => '2022-11-09 10:13:39',
+                'modified' => '2022-11-09 10:13:39',
                 'is_ban' => 1,
             ],
         ];

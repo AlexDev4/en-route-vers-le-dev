@@ -66,10 +66,16 @@ class SlidersTable extends Table
             ->allowEmptyString('category');
 
         $validator
-            ->scalar('link')
-            ->maxLength('link', 255)
-            ->requirePresence('link', 'create')
-            ->notEmptyString('link');
+            ->scalar('link_article')
+            ->maxLength('link_article', 255)
+            ->requirePresence('link_article', 'create')
+            ->notEmptyString('link_article');
+
+        $validator
+            ->scalar('link_cat')
+            ->maxLength('link_cat', 255)
+            ->requirePresence('link_cat', 'create')
+            ->notEmptyString('link_cat');
 
         $validator
             ->scalar('title')

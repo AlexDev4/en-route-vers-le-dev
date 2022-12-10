@@ -11,7 +11,8 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $img
  * @property string|null $category
- * @property string $link
+ * @property string $link_article
+ * @property string $link_cat
  * @property string|null $title
  * @property \Cake\I18n\FrozenTime|null $date
  * @property \Cake\I18n\FrozenTime $created
@@ -32,7 +33,8 @@ class Slider extends Entity
     protected $_accessible = [
         'img' => true,
         'category' => true,
-        'link' => true,
+        'link_article' => true,
+        'link_cat' => true,
         'title' => true,
         'date' => true,
         'created' => true,
